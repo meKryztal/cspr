@@ -1,1 +1,1 @@
-190.2.130.11:9999:dlyfg4ev5r-corp.mobile.res-country-UA-state-706482-hold-session-session-66fa80465431d:KvHDfUMgj8BoctqUT 2
+190.122.130.111:9999:lonin:pass name_session
