@@ -9,15 +9,7 @@
 # Установка:
 1. Установить python (Протестировано на 3.11)
 
-2. Зайти в cmd(терминал) и вписывать
-   ```
-   git clone https://github.com/meKryztal/okxrace.git
-   ```
-   
-   ```
-   cd okxrace
-   ```
-3. Установить модули
+2. Установить модули
    
    ```
    pip install -r requirements.txt
@@ -31,15 +23,15 @@
 
 
 
-4. Запуск
+3. Запуск
    ```
-   python main.py
+   python mjr.py
    ```
 
    или
 
    ```
-   python3 main.py
+   python3 mjr.py
    ```
    
 # Или через Pycharm ГАЙД на любых системах и решения ошибок внизу гайда
