@@ -12,15 +12,15 @@ from pyrogram import Client
 from fake_useragent import UserAgent
 from pyrogram.raw.functions.messages import RequestAppWebView
 from pyrogram.raw.types import InputBotAppShortName
-
+import sqlite3
 
 init(autoreset=True)
 
 
 PROXY_TYPE = "socks5"  # http/socks5
 USE_PROXY = False  # True/False
-API_ID = 1111111111  # апи
-API_HASH = 'hgfhfghfghfghfghfghfghfg'
+API_ID = 11111111  # апи
+API_HASH = 'fdgfdgfdgdfgdfgdf'
 REF = '382695384'
 
 class Data:
@@ -30,7 +30,7 @@ class Data:
 class PixelTod:
     def __init__(self):
         self.scraper = cloudscraper.create_scraper()
-        self.DEFAULT_COUNTDOWN = (20 * 3600) # Интервал между повтором скрипта, 20 часов 
+        self.DEFAULT_COUNTDOWN = 5  # Интервал между повтором скрипта, 8 часов 5 минут дефолт
         self.INTERVAL_DELAY = 10  # Интервал между каждым аккаунтом, 3 секунды дефолт
         self.base_headers = {
             "Accept": "application/json",
@@ -96,6 +96,7 @@ class PixelTod:
                     data = self.get_tg_web_data(account, prox)
                     new_data = Data(data)
                     self.process_account(new_data)
+
                     print('-' * 50)
                     self.countdown(self.INTERVAL_DELAY)
                 self.countdown(self.DEFAULT_COUNTDOWN)
@@ -105,7 +106,7 @@ class PixelTod:
     def process_account(self, data):
         self.login(data)
         self.leaderboard(data)
-        self.task(data)
+        #self.task(data)
 
     def pars_sessions(self):
         sessions = []
@@ -248,15 +249,12 @@ class PixelTod:
                 ))
             auth_url = web_view.url
             json.loads((unquote(string=unquote(string=auth_url.split('tgWebAppData=')[1].split('&tgWebAppVersion')[0])))[5:].split('&chat_instance')[0])
-            try:
-                return unquote(auth_url.split('tgWebAppData=')[1].split('&tgWebAppVersion')[0])
-            except IndexError:
-                self.log(f"{Fore.LIGHTRED_EX}Invalid auth_url format: {auth_url}")
-                return None
+
         except Exception as err:
             self.log(f"{err}")
-
         client.disconnect()
+        return unquote(auth_url.split('tgWebAppData=')[1].split('&tgWebAppVersion')[0])
+
 
 
     def countdown(self, t):
