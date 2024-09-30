@@ -30,8 +30,8 @@ class Data:
 class PixelTod:
     def __init__(self):
         self.scraper = cloudscraper.create_scraper()
-        self.DEFAULT_COUNTDOWN = 5  # Интервал между повтором скрипта, 8 часов 5 минут дефолт
-        self.INTERVAL_DELAY = 10  # Интервал между каждым аккаунтом, 3 секунды дефолт
+        self.DEFAULT_COUNTDOWN = (20* 3600) # Интервал между повтором скрипта, 20 часов  дефолт
+        self.INTERVAL_DELAY = 10  # Интервал между каждым аккаунтом, 10 секунды дефолт
         self.base_headers = {
             "Accept": "application/json",
             "Accept-Encoding": "gzip, deflate, br",
