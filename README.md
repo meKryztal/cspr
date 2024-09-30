@@ -25,13 +25,13 @@
 
 3. Запуск
    ```
-   python mjr.py
+   python cspr.py
    ```
 
    или
 
    ```
-   python3 mjr.py
+   python3 cspr.py
    ```
    
 # Или через Pycharm ГАЙД на любых системах и решения ошибок внизу гайда
