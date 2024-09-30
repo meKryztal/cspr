@@ -106,7 +106,7 @@ class PixelTod:
     def process_account(self, data):
         self.login(data)
         self.leaderboard(data)
-        #self.task(data)
+        self.task(data)
 
     def pars_sessions(self):
         sessions = []
