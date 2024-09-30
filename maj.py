@@ -18,9 +18,9 @@ init(autoreset=True)
 
 
 PROXY_TYPE = "socks5"  # http/socks5
-USE_PROXY = True  # True/False
-API_ID = 22579982  # апи
-API_HASH = '2825cfd9be7a2b620e1753fa646cd3d6'
+USE_PROXY = False  # True/False
+API_ID = 1111111111  # апи
+API_HASH = 'hgfhfghfghfghfghfghfghfg'
 REF = '382695384'
 
 class Data:
@@ -30,7 +30,7 @@ class Data:
 class PixelTod:
     def __init__(self):
         self.scraper = cloudscraper.create_scraper()
-        self.DEFAULT_COUNTDOWN = (8 * 3600) + (5 * 60)  # Интервал между повтором скрипта, 8 часов 5 минут дефолт
+        self.DEFAULT_COUNTDOWN = (20 * 3600) # Интервал между повтором скрипта, 20 часов 
         self.INTERVAL_DELAY = 10  # Интервал между каждым аккаунтом, 3 секунды дефолт
         self.base_headers = {
             "Accept": "application/json",
