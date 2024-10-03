@@ -198,7 +198,7 @@ class PixelTod:
                                         proxy=proxy_client)
 
                         if client.connect():
-                            session.get_me()
+                            client.get_me()
                             valid_sessions.append(session)
                         else:
                             self.log(f"{Fore.LIGHTRED_EX}{session}.session is invalid")
@@ -208,7 +208,7 @@ class PixelTod:
                         client = Client(name=session, api_id=API_ID, api_hash=API_HASH, workdir="sessions/")
 
                         if client.connect():
-                            session.get_me()
+                            client.get_me()
                             valid_sessions.append(session)
                         else:
                             self.log(f"{Fore.LIGHTRED_EX}{session}.session is invalid")
@@ -223,7 +223,7 @@ class PixelTod:
                     client = Client(name=session, api_id=API_ID, api_hash=API_HASH, workdir="sessions/")
 
                     if client.connect():
-                        session.get_me()
+                        client.get_me()
                         valid_sessions.append(session)
                     else:
                         self.log(f"{session}.session is invalid")
@@ -240,7 +240,7 @@ class PixelTod:
         else:
             client = Client(name=account, api_id=API_ID, api_hash=API_HASH, workdir="sessions/")
         client.connect()
-        session.get_me()
+        client.get_me()
         try:
             bot = client.resolve_peer('csprfans_bot')
             app = InputBotAppShortName(bot_id=bot, short_name="CSPRfans")
